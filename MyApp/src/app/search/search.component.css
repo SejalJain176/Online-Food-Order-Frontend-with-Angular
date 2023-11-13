@@ -1,0 +1,10 @@
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div input{
+    border-radius: 2rem 2rem 2rem 2rem;
+}

@@ -1,3 +1,5 @@
+<app-search></app-search>
+
 <ul>
     <li *ngFor="let food of foods">
       <a>
@@ -22,17 +24,40 @@
 
                 </span>
             </div>
+
+            
+        </div>
+
+        <div class="star">
+            <app-rating [rating]="food.star" [ngStyle]="{'font-size.px': 20}"></app-rating>
         </div>
 
         <div class="cook-time">
+
+            <mat-icon  [ngStyle]="{'font-size.px': 15}">access_time</mat-icon>
+
             <span>
                 {{food.cookTime}}
             </span>
         </div>
         
         <div class="price">
+            <mat-icon  [ngStyle]="{'font-size.px': 15}">rupeea
+
+
+
+                s
+
+
+
+
+
+
+
+                
+            </mat-icon>
             <span>
-                {{food.price}}
+                {{food.price|currency}}
             </span>
         </div>
         </span>

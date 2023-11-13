@@ -14,9 +14,9 @@ return[
     price:20,
     name:"Saucy Penne Pasta ",
     favourite:false,
-    star:4.5,
+    star:3.5,
     tags:['FastFood'],
-    imageUrl:'assets/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table.jpg',
+    imageUrl:'assets/pasta.jpg',
     cookTime:"20-30 min",
     origins:['Italian']
   },
@@ -37,11 +37,11 @@ return[
   {
     id:3,
     price:20,
-    name:"Dhal spicy Bowl",
+    name:"Punjabi Daal Makhni",
     favourite:false,
     star:4.0,
     tags:['Lunch','Healthy'],
-    imageUrl:'assets/traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-table.jpg',
+    imageUrl:'assets/daal.jpg',
     cookTime:"20-30 min",
     origins:['Indian']
   },
