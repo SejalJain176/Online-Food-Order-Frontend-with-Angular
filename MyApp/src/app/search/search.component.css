@@ -6,5 +6,28 @@ div{
 }
 
 div input{
-    border-radius: 2rem 2rem 2rem 2rem;
+    border-radius: 2rem 0rem 0rem 2rem;
+    border:none;
+    height: 1rem;
+    width: 10rem;
+    background-color: #f1f1f1;
+    padding: 0.5rem;
+   
+    outline: none;
+}
+
+div button{
+    color: white;
+    height: 1rem;
+    width: 3rem;
+    border-radius: 0rem 2rem 2rem 0rem;
+   border: none;
+   outline: none;
+   background-color: #e72929;
+
+}
+
+div button:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }

@@ -11,6 +11,9 @@ import { RatingModule } from 'ng-starrating';
 import { RatingComponent } from './rating/rating.component';
 import { SearchComponent } from './search/search.component'
 import { FormsModule } from '@angular/forms';
+import { TagComponent } from './tag/tag.component';
+import { FoodPageComponent } from './food-page/food-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     RatingComponent,
     SearchComponent,
+    TagComponent,
+    FoodPageComponent,
+    CartPageComponent,
     
   ],
   imports: [

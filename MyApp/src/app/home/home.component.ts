@@ -28,6 +28,10 @@ export class HomeComponent {
         )
 
       }
+
+      else if(params['tag']){
+        this.foods = this.FoodService.getAllFoodByTag(params['tag'])
+      }
       else
        this.foods = this.FoodService.getAll()
     })
