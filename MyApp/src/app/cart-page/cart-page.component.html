@@ -15,7 +15,7 @@ resetLinkText="Go To HomePage"></app-not-found>
             </div>
     
             <div>
-                <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)">
+                <select [(ngModel)]="this.quant" (change)="changeQuantity(cartItem, this.quant)">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -23,7 +23,9 @@ resetLinkText="Go To HomePage"></app-not-found>
                     <option value="5">5</option>
                 </select>
             </div>
+
             
+
     
             <div>
                 {{cartItem.food.price | currency}}

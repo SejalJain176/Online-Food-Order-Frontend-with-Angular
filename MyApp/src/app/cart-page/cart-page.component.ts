@@ -13,6 +13,7 @@ import { takeUntil } from 'rxjs/operators';
 export class CartPageComponent implements OnInit {
   cart!: Cart;
   private destroy$ = new Subject<void>();
+  quant:number=1;
 
   constructor(private cartService: CartService) {}
 
@@ -33,7 +34,8 @@ export class CartPageComponent implements OnInit {
   }
 
   changeQuantity(cartItem: any, quantityInString: any) {
-    const quantity = parseInt(quantityInString);
+  let quantity = parseInt(quantityInString);
+    console.log("quantity" , quantity)
     this.cartService.changeQuantity(cartItem.food.id, quantity);
     this.setCart()
   }

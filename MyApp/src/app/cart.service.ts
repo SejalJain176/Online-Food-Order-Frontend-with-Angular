@@ -18,7 +18,7 @@ export class CartService {
     let cartItem = this.cart.items.find(item => item.food.id == food.id);
 
     if (cartItem) {
-      this.changeQuantity(cartItem.quantity+1, food.id);
+      this.changeQuantity(cartItem.quantity +1, food.id);
       return;
     }
 
@@ -26,12 +26,14 @@ export class CartService {
     this.notifyCartChanges();
   }
 
-  changeQuantity(quantity: number, foodId: number): void {
+  changeQuantity( foodId: number,quantity: number): void {
+    debugger
     let cartItem = this.cart.items.find(item => item.food.id == foodId);
 
     if (!cartItem) return;
 
     cartItem.quantity = quantity;
+    console.log("quantity2" , quantity)
     this.notifyCartChanges();
   }
 
