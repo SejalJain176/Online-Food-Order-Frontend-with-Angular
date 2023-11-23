@@ -26,7 +26,7 @@ export class CartPageComponent {
 
   }
 
-  changeQuantity(cartItem:CartItem,quantityInString:string){
+  changeQuantity(cartItem:any,quantityInString:any){
 
     const quantity = parseInt(quantityInString);
     this.cartService.changeQuantity(cartItem.food.id,quantity)

@@ -6,11 +6,12 @@ header{
 
 a{
     color: red;
+
 }
 
 a:hover{
-    color:blueviolet;
-    background-color:cadetblue
+    color: white;
+    background-color:red
 }
 .container{
     margin: 0 auto;
@@ -20,7 +21,7 @@ a:hover{
 
 a.logo{
     font-weight: bold;
-    padding: 1 em;
+    padding: 1em;
 }
 
 nav ul{
