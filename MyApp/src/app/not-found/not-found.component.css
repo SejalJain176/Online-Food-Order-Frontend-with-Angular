@@ -1,0 +1,28 @@
+div{
+    margin-top: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: .5rem;
+    font-weight:200;
+    height: 25;
+}
+
+
+
+div a{
+
+    margin-top: .2rem;
+    padding: 0.2rem 0.2rem 0.2rem 7.2rem;
+    color: white;
+    background-color: #e72929;
+    display: block;
+    width: 65%;
+    justify-content: center;
+   
+}
+
+div a:hover{
+    opacity: .8;
+}

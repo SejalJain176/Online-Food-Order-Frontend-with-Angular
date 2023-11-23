@@ -1,0 +1,105 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1.5rem;
+
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    flex : 3 0;
+    border: 1px solid #ffbbbf;
+    border-radius: 1rem;
+    margin: .5rem;
+    padding: 0;
+
+}
+
+ul li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #e4e4e4;
+
+}
+
+ul li:last-child{
+
+    border: none;
+}
+
+ul li img{
+    height : 2rem;
+    width: 2rem;
+    border-radius : 100rem;
+    object-fit: cover;
+}
+
+ul li div{
+    padding:.1rem
+}
+
+ul li select{
+    width: 2rem;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid lightcoral;
+    font-weight: 100 ;
+}
+
+ul .remove-button{
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    padding: .5rem;
+    opacity: .7rem;
+    color: #e72929;
+
+}
+
+ul .remove-button:hover{
+    opacity: .8;
+    cursor: pointer;
+}
+
+.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 3;
+    height: 5rem ;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    
+}
+
+.checkout .food-count::before{
+    content: 'Total Products';
+    color: gray;
+}
+.checkout .total-price::before{
+    content: 'Total Price';
+    color: gray;
+}
+
+.checkout a{
+
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    color: white;
+    background-color: #e72929;
+    display: block;
+    width: 65%;
+    justify-content: center;
+   
+}
+
+.checkout a:hover{
+    opacity: .8;
+}
+/* ul li div:not(:first-child){
+    flex-basis: 18%;
+} */
