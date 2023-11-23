@@ -10,29 +10,31 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css']
 })
-export class CartPageComponent implements OnInit, OnDestroy {
+export class CartPageComponent implements OnInit {
   cart!: Cart;
   private destroy$ = new Subject<void>();
 
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.cartService.getCart().subscribe((cart: Cart) => {
-        this.cart = cart;
-      });
+   this.setCart();
   }
 
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
+  setCart(){
+    this.cartService.getCart().subscribe((cart: Cart) => {
+      this.cart = cart;
+    });
   }
+ 
 
   removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.food.id);
+    this.setCart()
   }
 
   changeQuantity(cartItem: any, quantityInString: any) {
     const quantity = parseInt(quantityInString);
     this.cartService.changeQuantity(cartItem.food.id, quantity);
+    this.setCart()
   }
 }
