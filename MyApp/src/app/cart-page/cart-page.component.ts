@@ -1,36 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Cart } from '../shared/models/cart';
 import { CartItem } from '../shared/models/cartItem';
-import { FoodPageComponent } from '../food-page/food-page.component';
-import { FoodServiceService } from '../food/food-service.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css']
 })
-export class CartPageComponent {
+export class CartPageComponent implements OnInit, OnDestroy {
   cart!: Cart;
-  constructor(private cartService:CartService,private fs :FoodServiceService){
-    this.setCart();
-  }
-  setCart() {
-    this.cart=this.cartService.getCart()
+  private destroy$ = new Subject<void>();
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
+    this.cartService
+      .getCart()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((cart: Cart) => {
+        this.cart = cart;
+      });
   }
 
-  removeFromCart(cartItem:CartItem){
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 
+  removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.food.id);
-    this.setCart()
-
   }
 
-  changeQuantity(cartItem:any,quantityInString:any){
-
+  changeQuantity(cartItem: any, quantityInString: any) {
     const quantity = parseInt(quantityInString);
-    this.cartService.changeQuantity(cartItem.food.id,quantity)
-    this.setCart()
-
+    this.cartService.changeQuantity(cartItem.food.id, quantity);
   }
 }
